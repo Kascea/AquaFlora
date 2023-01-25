@@ -1,0 +1,276 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.37.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Cole Carlson, University of St. Thomas, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.37.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.18
+Assembler:       Armasm.exe V6.18
+Linker/Locator:  ArmLink.exe V6.18
+Library Manager: ArmAr.exe V6.18
+Hex Converter:   FromElf.exe V6.18
+CPU DLL:         SARMCM3.DLL V5.37.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.56.1.0
+ 
+<h2>Project:</h2>
+C:\Users\colec\OneDrive - University of St. Thomas\ENGR331\code\PlantWateringSystem\PlantWateringSystem.uvprojx
+Project File Date:  12/18/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.18', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+compiling Infared.c...
+SPI.c(17): warning: variable 'ENABLE' set but not used [-Wunused-but-set-variable]
+        int ENABLE;
+            ^
+SPI.c(15): warning: variable 'p' set but not used [-Wunused-but-set-variable]
+        int p;
+            ^
+SPI.c(16): warning: variable 'whoami' set but not used [-Wunused-but-set-variable]
+        int whoami;
+            ^
+SPI.c(129): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        return(SPI1 -> DR);
+        ~~~~~~ ~~~~~~~~^~
+SPI.c(151): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        mi = SPI1 -> DR;
+           ~ ~~~~~~~~^~
+SPI.c(159): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        mi = SPI1 -> DR;
+           ~ ~~~~~~~~^~
+SPI.c(141): warning: variable 'mi' set but not used [-Wunused-but-set-variable]
+        int mi = 0;
+            ^
+SPI.c(172): warning: implicit conversion loses integer precision: 'volatile uint32_t' (aka 'volatile unsigned int') to 'unsigned char' [-Wimplicit-int-conversion]
+return (SPI1->DR);
+~~~~~~  ~~~~~~^~
+SPI.c(177): warning: unused variable 'temp' [-Wunused-variable]
+        int temp = 0;
+            ^
+SPI.c(273): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+SPI.c(211): warning: variable 'ADD' is uninitialized when used here [-Wuninitialized]
+                        ADD += Array[i]*Array[i];
+                        ^~~
+SPI.c(207): note: initialize the variable 'ADD' to silence this warning
+                double ADD;
+                          ^
+                           = 0.0
+11 warnings generated.
+compiling SPI.c...
+LCD.c(288): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+        sprintf(str, "%6.3f", num);
+        ~~~~~~~               ^~~
+1 warning generated.
+compiling LCD.c...
+Keypad.c(29): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        uint32_t colData = ~GPIOD->IDR & (GPIO_IDR_ID10_Msk | GPIO_IDR_ID9_Msk | GPIO_IDR_ID8_Msk);
+                 ^
+1 warning generated.
+compiling Keypad.c...
+Buttons.c(23): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+1 warning generated.
+compiling Buttons.c...
+Final_Functions.c(22): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(22): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(28): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(28): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(34): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(34): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(46): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(46): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(52): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(52): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(58): warning: for loop has empty body [-Wempty-body]
+for(int i=0; i<2000; i++);
+                         ^
+Final_Functions.c(58): note: put the semicolon on a separate line to silence this warning
+Final_Functions.c(98): warning: implicit conversion changes signedness: 'volatile uint32_t' (aka 'volatile unsigned int') to 'int' [-Wsign-conversion]
+        water_level = ADC1->DR;
+                    ~ ~~~~~~^~
+Final_Functions.c(133): warning: implicit conversion changes signedness: 'uint32_t' (aka 'unsigned int') to 'int' [-Wsign-conversion]
+        timerVal = TimeToDelay;
+                 ~ ^~~~~~~~~~~
+8 warnings generated.
+compiling Final_Functions.c...
+main.c(91): warning: no previous prototype for function 'EXTI2_IRQHandler' [-Wmissing-prototypes]
+void EXTI2_IRQHandler() { //Infrared interrupt for plant detection
+     ^
+main.c(91): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI2_IRQHandler() { //Infrared interrupt for plant detection
+^
+static 
+main.c(91): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void EXTI2_IRQHandler() { //Infrared interrupt for plant detection
+                     ^
+main.c(105): warning: no previous prototype for function 'EXTI4_IRQHandler' [-Wmissing-prototypes]
+void EXTI4_IRQHandler() { //Infrared interrupt for collison detection
+     ^
+main.c(105): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI4_IRQHandler() { //Infrared interrupt for collison detection
+^
+static 
+main.c(105): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void EXTI4_IRQHandler() { //Infrared interrupt for collison detection
+                     ^
+main.c(134): warning: passing 'volatile char[16]' to parameter of type 'const char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        strLength = strlen(inputString);
+                           ^~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(335): note: passing argument to parameter here
+extern _ARMABI size_t strlen(const char * /*s*/) __attribute__((__nonnull__(1)));
+                                               ^
+main.c(137): warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+                timerVal = atoi(inputString);
+                           ^
+main.c(140): warning: for loop has empty body [-Wempty-body]
+                for(int i=0; i <500; i++);
+                                         ^
+main.c(140): note: put the semicolon on a separate line to silence this warning
+main.c(144): warning: passing 'volatile char[16]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                memset(inputString, 0, sizeof inputString);
+                       ^~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(148): warning: passing 'volatile char[16]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                strcat(inputString, tmpstr);
+                       ^~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(93): note: passing argument to parameter here
+extern _ARMABI char *strcat(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+                                                    ^
+main.c(150): warning: passing 'volatile char[16]' to parameter of type 'char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                LCD_print_string(inputString);
+                                 ^~~~~~~~~~~
+./LCD.h(35): note: passing argument to parameter 'str' here
+void LCD_print_string(char str[16]);
+                           ^
+main.c(128): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        char tmpstr[2];
+             ^
+main.c(118): warning: no previous prototype for function 'EXTI15_10_IRQHandler' [-Wmissing-prototypes]
+void EXTI15_10_IRQHandler() { //keypad interrupt
+     ^
+main.c(118): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI15_10_IRQHandler() { //keypad interrupt
+^
+static 
+main.c(118): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void EXTI15_10_IRQHandler() { //keypad interrupt
+                         ^
+main.c(175): warning: passing 'volatile char[16]' to parameter of type 'void *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                memset(inputString, 0, sizeof inputString);
+                       ^~~~~~~~~~~
+C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h(321): note: passing argument to parameter here
+extern _ARMABI void *memset(void * /*s*/, int /*c*/, size_t /*n*/) __attribute__((__nonnull__(1)));
+                                        ^
+main.c(167): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        int isOverride = GPIOB->IDR & (1u<<7); //Mask out two input bits
+            ^
+main.c(162): warning: no previous prototype for function 'EXTI9_5_IRQHandler' [-Wmissing-prototypes]
+void EXTI9_5_IRQHandler() { //Button interrupt
+     ^
+main.c(162): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void EXTI9_5_IRQHandler() { //Button interrupt
+^
+static 
+main.c(162): warning: this old-style function definition is not preceded by a prototype [-Wstrict-prototypes]
+void EXTI9_5_IRQHandler() { //Button interrupt
+                       ^
+main.c(205): warning: passing 'volatile signed char[8]' to parameter of type 'signed char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        shift(data_x);
+              ^~~~~~
+./SPI.h(6): note: passing argument to parameter 'Array' here
+void shift(signed char Array[20]);
+                       ^
+main.c(208): warning: implicit conversion changes signedness: 'unsigned char' to 'signed char' [-Wsign-conversion]
+        data_x[0] = spi_send(0x0);
+                  ~ ^~~~~~~~~~~~~
+main.c(210): warning: passing 'volatile signed char[8]' to parameter of type 'signed char *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        output = RMS_div8(data_x);
+                          ^~~~~~
+./SPI.h(10): note: passing argument to parameter 'Array' here
+double RMS_div8(signed char Array[8]);
+                            ^
+main.c(214): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+                LCD_print_float(output);
+                ~~~~~~~~~~~~~~~ ^~~~~~
+main.c(212): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+        int ctr = 0;
+            ^
+main.c(202): warning: variable 'm' set but not used [-Wunused-but-set-variable]
+        int m;
+            ^
+main.c(11): warning: no previous extern declaration for non-static variable 'data_x' [-Wmissing-variable-declarations]
+volatile signed char data_x[8]; ////code variables
+                     ^
+main.c(11): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile signed char data_x[8]; ////code variables
+         ^
+main.c(19): warning: no previous extern declaration for non-static variable 'current' [-Wmissing-variable-declarations]
+volatile state current;
+               ^
+main.c(19): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+volatile state current;
+         ^
+25 warnings generated.
+compiling main.c...
+assembling startup_stm32f407xx.s...
+compiling system_stm32f4xx.c...
+linking...
+Program Size: Code=16572 RO-data=1032 RW-data=12 ZI-data=1684  
+".\Objects\PlantWateringSystem.axf" - 0 Error(s), 47 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
+                Keil.STM32F4xx_DFP.2.16.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_Target_1
+  C:/Users/colec/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/colec/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
