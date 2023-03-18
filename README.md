@@ -11,7 +11,7 @@ An automatic Plant Watering Device that watered multiple plants along a track at
 
 ### Work Breakdown Structure
 
-![Alt text](/PNGs/Work Breakdown Structure.png "Work Breakdown Structure")
+<img src="/PNGs/Work Breakdown Structure.png"  width="600" height="300">
 
 ### State Machine
 
