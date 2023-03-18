@@ -11,7 +11,11 @@ An automatic Plant Watering Device that watered multiple plants along a track at
 
 ### Work Breakdown Structure
 
-### States
+![Alt text](/PNGs/Work Breakdown Structure.png "Work Breakdown Structure")
+
+### State Machine
+
+![Alt text](/PNGs/States.png "State Machine")
 
 ### Peripherals
 
@@ -27,7 +31,8 @@ An automatic Plant Watering Device that watered multiple plants along a track at
 
 ## Pictures
 
-
+![Alt text](/PNGs/IMG_4235.png "")
+![Alt text](/PNGs/IMG_4236.png "")
 
 ## Contributors
 
