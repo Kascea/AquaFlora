@@ -15,7 +15,7 @@ An automatic Plant Watering Device that watered multiple plants along a track at
 
 ### State Machine
 
-<img src="/PNGs/States.png">
+<img src="/PNGs/States.png" height="1000" widht="500" >
 
 ### Peripherals
 
